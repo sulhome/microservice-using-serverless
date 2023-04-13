@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "serverless-offline": "^12.0.4",
+    "serverless-s3-local": "^0.7.1"
+  },
+  "scripts": {
+    "run:offline": "serverless offline"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "sharp": "^0.32.0"
+  }
+}

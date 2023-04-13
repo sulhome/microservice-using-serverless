@@ -1,0 +1,22 @@
+service: microservice-using-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 30
+
+functions:
+  s3hook:
+    handler: index.s3hook
+    events:
+      - s3: photos
+        event: s3:ObjectCreated:*
+
+plugins:
+  - serverless-s3-local
+  - serverless-offline
+custom:
+  s3:
+    host: localhost
+    directory: ./local-s3
